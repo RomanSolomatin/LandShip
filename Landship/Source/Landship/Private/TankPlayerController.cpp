@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "Landship.h"
+
 #include "TankPlayerController.h"
+#include "Landship.h"
 
 
-
-ATank* ATankPlayerController::GetControlledTank() const
+ATank1* ATankPlayerController::GetControlledTank() const
 {
-	return Cast<ATank>(GetPawn());
+	return Cast<ATank1>(GetPawn());
 }
