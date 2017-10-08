@@ -10,12 +10,17 @@ UCLASS()
 class LANDSHIP_API ATank1 : public APawn
 {
 	GENERATED_BODY()
+public:
+		void AimAt(FVector HitLocation);
 
 public:
 	// Sets default values for this pawn's properties
 	ATank1();
 
 protected:
+
+    
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

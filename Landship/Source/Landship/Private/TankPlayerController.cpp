@@ -19,6 +19,9 @@ void ATankPlayerController::BeginPlay()
 
 }
 
+
+
+
 void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -27,6 +30,9 @@ void ATankPlayerController::Tick(float DeltaTime)
 
 }
 
+
+
+
 void ATankPlayerController::AimTowardCrosshair()
 {
 	if ( !GetControlledTank() ){ return; }
@@ -34,13 +40,17 @@ void ATankPlayerController::AimTowardCrosshair()
 	FVector HitLocation;//out parameter
 	if (GetSightRayHitLocation( HitLocation ))//has "side-effect", is going to line trace
 	{
-		//UE_LOG(LogTemp, Warning, TEXT("Look Direction: %s"), *HitLocation.ToString())
-		
-		 
-			//TODO be controlled tank begoo dar on noghte neshone begire
+		//UE_LOG(LogTemp, Warning, TEXT("Hit Direction: %s"), *HitLocation.ToString())
+		//dar on noghte neshone begire
+		GetControlledTank()->AimAt(HitLocation);
+
 	}
 
 }
+
+
+
+
 //Dar edame bayad: Get world location az line trace dakhele neshone gerefte she(cross hair), true if hits landscape
 bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 {
@@ -54,18 +64,16 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 	FVector LookDirection;
 	if (GetLookDirection(ScreenLocation, LookDirection))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Look Direction: %s"), *LookDirection.ToString());
+		// line trace (be manie donbal kardane khat) along that look diresction, and see what hit (up to max range)
+		GetLookVectorHitLocation(LookDirection, HitLocation);
 	}
+
+
 	
-	
-
-
-
-
-
-	// line trace (be manie donbal kardane khat) along that look diresction, and see what hit (up to max range)
 	return true;
 }
+
+
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector & LookDirection) const
 {
@@ -74,6 +82,24 @@ bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector &
 	
 	return true;
 }
+
+
+
+bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVector & HitLocation) const
+{
+	FHitResult HitResult;
+	auto StartLocation = PlayerCameraManager->GetCameraLocation();
+	auto EndLocation = StartLocation + (LookDirection * LineTraceRange);
+	if ( GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECollisionChannel::ECC_Visibility) )
+	{
+		HitLocation = HitResult.Location;
+		return true;
+	}
+	HitLocation = FVector(0);
+	return false; //yani line trace movafagh nashode
+}
+
+
 
 
 
