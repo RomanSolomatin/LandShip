@@ -5,6 +5,8 @@
 
 
 
+
+
 // Sets default values
 ATank1::ATank1()
 {
@@ -43,4 +45,10 @@ void ATank1::AimAt(FVector HitLocation)
 {
 	TankAimingComponent->AimAt(HitLocation);
 
+}
+
+
+void ATank1::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
+{
+	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
