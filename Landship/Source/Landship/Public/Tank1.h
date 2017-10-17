@@ -6,7 +6,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Tank1.generated.h"
-
+class UTankBarrel;
 UCLASS()
 class LANDSHIP_API ATank1 : public APawn
 {
@@ -15,7 +15,7 @@ public:
 		void AimAt(FVector HitLocation);
 		
 		UFUNCTION(BlueprintCallable, Category = Setup)
-		void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+		void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	// Sets default values for this pawn's properties
 	ATank1();
