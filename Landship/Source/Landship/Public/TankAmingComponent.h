@@ -7,6 +7,7 @@
 #include "TankAmingComponent.generated.h"
 
 class UTankBarrel; 
+// Daraye darayy haye barrel hast
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class LANDSHIP_API UTankAmingComponent : public UActorComponent
 {
@@ -22,7 +23,7 @@ public:
 
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
-//private:
+private:
 	UTankBarrel* Barrel = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);

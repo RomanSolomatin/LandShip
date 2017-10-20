@@ -9,13 +9,15 @@
 /**
  * 
  */
-UCLASS()
+UCLASS( meta = (BlueprintSpawnableComponent) )
 class LANDSHIP_API UTankBarrel : public UStaticMeshComponent
 {
 	GENERATED_BODY()
 public:
 	void Elevate(float DegreesPerSecond);
 	
-	
+private:
+	UPROPERTY(EditAnyWhere)
+		float MaxDegreesPerSecond = 20; // YE addad Default
 	
 };
