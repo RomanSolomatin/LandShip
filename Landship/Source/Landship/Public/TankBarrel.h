@@ -14,10 +14,13 @@ class LANDSHIP_API UTankBarrel : public UStaticMeshComponent
 {
 	GENERATED_BODY()
 public:
-	void Elevate(float DegreesPerSecond);
+	void Elevate(float RelativeSpeed);
 	
 private:
-	UPROPERTY(EditAnyWhere)
+	UPROPERTY(EditAnyWhere, Category = Setup)
 		float MaxDegreesPerSecond = 20; // YE addad Default
-	
+	UPROPERTY(EditAnyWhere, Category = Setup)
+		float MaxElevationDegrees = 40; // TODO Adad ha ba aadade doros taviz shavad
+	UPROPERTY(EditAnyWhere, CAtegory = Setup)
+		float MinElevationDegrees = -5; // TODO ++
 };

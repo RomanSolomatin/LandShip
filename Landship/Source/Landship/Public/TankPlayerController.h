@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Tank1.h"
+//#include "Tank1.h" dar C++ baraye behtar kar kardane .exe bayad in ravesh ke tozihate an dar viddeo 133 omade anjam she hich headeri nabayad dar header include shavad
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"
@@ -10,6 +10,7 @@
 /**
  * 
  */
+class ATank1;
 UCLASS()
 class LANDSHIP_API ATankPlayerController : public APlayerController
 {

@@ -1,5 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
+#include "TankAmingComponent.h"
 #include "Tank1.h"
 #include "../Public/Tank1.h"
 
@@ -11,7 +11,7 @@
 ATank1::ATank1()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
    
 	//no need too protect pointers as added to construction
 	TankAimingComponent = CreateDefaultSubobject<UTankAmingComponent>(FName("AimingComponent"));
@@ -25,12 +25,12 @@ void ATank1::BeginPlay()
 	
 }
 
-// Called every frame
-void ATank1::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
+//// Called every frame
+//void ATank1::Tick(float DeltaTime)
+//{
+//	Super::Tick(DeltaTime);
+//
+//}
 
 // Called to bind functionality to input
 void ATank1::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
