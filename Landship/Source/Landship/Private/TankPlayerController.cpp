@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "Tank1.h"
 #include "TankPlayerController.h"
+#include "Tank1.h"
 #include "Landship.h"
 
 void ATankPlayerController::BeginPlay()

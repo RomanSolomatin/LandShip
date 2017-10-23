@@ -18,9 +18,9 @@ public:
 	
 private:
 	UPROPERTY(EditAnyWhere, Category = Setup)
-		float MaxDegreesPerSecond = 20; // YE addad Default
+		float MaxDegreesPerSecond = 5; // YE addad Default
 	UPROPERTY(EditAnyWhere, Category = Setup)
-		float MaxElevationDegrees = 40; // TODO Adad ha ba aadade doros taviz shavad
+		float MaxElevationDegrees = 40; 
 	UPROPERTY(EditAnyWhere, CAtegory = Setup)
-		float MinElevationDegrees = -5; // TODO ++
+		float MinElevationDegrees = 0; 
 };
