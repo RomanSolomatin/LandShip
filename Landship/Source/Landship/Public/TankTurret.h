@@ -13,4 +13,18 @@ UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class LANDSHIP_API UTankTurret : public UStaticMeshComponent
 {
 	GENERATED_BODY()
+public:
+	void Rotate(float RelativeSpeed);
+
+private:
+	UPROPERTY(EditAnyWhere, Category = Setup)
+	float MaxDegreesPerSecond = 25; // YE addad Default
+
+
+
+
+
+
+
+
 };
