@@ -8,6 +8,12 @@
 #include "Tank1.generated.h"
 class UTankBarrel;
 class UTankAmingComponent;
+class AProjectile;
+//{
+//public:
+//protected:
+//private:
+//};
 UCLASS()
 class LANDSHIP_API ATank1 : public APawn
 {
@@ -41,5 +47,10 @@ public:
 
 	
 	UPROPERTY(EditAnywhere, Category = Firing)
-		float LaunchSpeed = 100000; // Sensible Starting Value of 1000 m/s
+		float LaunchSpeed = 4000;
+	UPROPERTY(EditAnywhere, Category = Setup)
+		/*UClass* projectileBlueprint;*/
+		TSubclassOf<AProjectile> ProjectileBlueprint;
+
+	UTankBarrel* Barrel = nullptr;
 };

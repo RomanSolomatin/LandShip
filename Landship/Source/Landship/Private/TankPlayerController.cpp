@@ -26,7 +26,6 @@ void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	AimTowardCrosshair();
-	//tick dar har frame kar mikonad
 
 }
 
