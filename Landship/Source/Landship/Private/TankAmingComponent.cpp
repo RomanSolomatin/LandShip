@@ -44,22 +44,14 @@ void UTankAmingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		auto TankName = GetOwner()->GetName();
 		MoveBarrelTowards(AimDirection);
 		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f: Aim Solution found"), Time);
-	}
-	else
-	{
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f: No Aim Solve Founde"), Time);
+		/*UE_LOG(LogTemp, Warning, TEXT("%f: Aim Solution found"), Time);*/
 	}
 	// if no solution found do nothing
-
-	
-
 }
 
 void UTankAmingComponent::MoveBarrelTowards(FVector AimDirection)
 {
-	//Work_out diffrence between current barre roation , and aim direction
+	//Work_out difference between current barre rotation , and aim direction
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotation = AimAsRotator - BarrelRotator;
