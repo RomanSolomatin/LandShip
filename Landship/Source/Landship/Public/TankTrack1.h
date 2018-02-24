@@ -17,4 +17,6 @@ class LANDSHIP_API UTankTrack1 : public UStaticMeshComponent
 	UFUNCTION(BlueprintCallable, category = Input)
 	void SetThrottle(float Throttle);
 	
+	UPROPERTY(EditDefaultsOnly)
+		float MaxTrackDrivingForce = 400000; //400 000
 };
