@@ -2,13 +2,19 @@
 
 #pragma once
 
+//#include "TankAmingComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Tank1.generated.h"
 class UTankBarrel;
 class UTankAmingComponent;
-class UMyNavMovementComponent1;
 class AProjectile;
+class UTankNavMovementComponent1;
+//{
+//public:
+//protected:
+//private:
+//};
 UCLASS()
 class LANDSHIP_API ATank1 : public APawn
 {
@@ -29,7 +35,7 @@ public:
 protected:
 	UTankAmingComponent* TankAimingComponent = nullptr;
 	UPROPERTY()
-		UMyNavMovementComponent1* TankNavMovementComponent = nullptr;
+	UTankNavMovementComponent1* ALLI = nullptr;
     
 
 	// Called when the game starts or when spawned

@@ -13,8 +13,9 @@ UCLASS()
 class LANDSHIP_API UTankNavMovementComponent1 : public UNavMovementComponent
 {
 	GENERATED_BODY()
-	
-	
+
+	UFUNCTION(BlueprintCallable, Category = Input)
+	void IntendMoveForward(float ALI);
 	
 	
 };
