@@ -4,6 +4,7 @@
 #include "TankAmingComponent.h"
 #include "Projectile.h"
 #include "TankBarrel.h"
+#include "MyNavMovementComponent1.h"
 #include "../Public/Tank1.h"
 
 
@@ -18,7 +19,7 @@ ATank1::ATank1()
    
 	//no need too protect pointers as added to construction
 	TankAimingComponent = CreateDefaultSubobject<UTankAmingComponent>(FName("AimingComponent"));
-
+	TankNavMovementComponent = CreateDefaultSubobject<UMyNavMovementComponent1>(FName("TankNavMovementComponent"));
 }
 
 // Called when the game starts or when spawned
