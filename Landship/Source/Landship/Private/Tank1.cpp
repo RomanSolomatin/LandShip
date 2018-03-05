@@ -19,7 +19,6 @@ ATank1::ATank1()
    
 	//no need too protect pointers as added to construction
 	TankAimingComponent = CreateDefaultSubobject<UTankAmingComponent>(FName("AimingComponent"));
-	ALLI = CreateDefaultSubobject<UTankNavMovementComponent1>(FName("ALLI"));
 
 }
 

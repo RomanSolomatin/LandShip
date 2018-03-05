@@ -6,3 +6,13 @@ void UTankNavMovementComponent1::IntendMoveForward(float ALI)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Intend TO Move Forward: %f"), ALI);
 }
+
+void UTankNavMovementComponent1::Initialze(UTankTrack1 * LeftTrackToSet, UTankTrack1 * RightTrackToSet)
+{
+	if (!LeftTrackToSet || !RightTrackToSet)
+	{
+		return;
+	}
+	LeftTrack = LeftTrackToSet;
+	RightTrack = RightTrackToSet;
+}
