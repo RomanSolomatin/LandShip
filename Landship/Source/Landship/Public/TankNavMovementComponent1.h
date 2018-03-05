@@ -7,7 +7,7 @@
 #include "TankNavMovementComponent1.generated.h"
 class UTankTrack1;
 /**
- * 
+ * In class tanktrack ra control mikonad.
  */
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class LANDSHIP_API UTankNavMovementComponent1 : public UNavMovementComponent

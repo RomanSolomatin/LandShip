@@ -13,7 +13,7 @@ UCLASS(meta = (BlueprintSpawnableComponent))
 class LANDSHIP_API UTankTrack1 : public UStaticMeshComponent
 {
 	GENERATED_BODY()
-
+public:
 	UFUNCTION(BlueprintCallable, category = Input)
 	void SetThrottle(float Throttle);
 	
