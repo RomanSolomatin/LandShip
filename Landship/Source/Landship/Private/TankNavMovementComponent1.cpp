@@ -5,7 +5,6 @@
 
 void UTankNavMovementComponent1::IntendMoveForward(float ALI)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Intend TO Move Forward: %f"), ALI);
 	LeftTrack->SetThrottle(ALI);
 	RightTrack->SetThrottle(ALI);
 }
@@ -18,4 +17,9 @@ void UTankNavMovementComponent1::Initialze(UTankTrack1 * LeftTrackToSet, UTankTr
 	}
 	LeftTrack = LeftTrackToSet;
 	RightTrack = RightTrackToSet;
+}
+
+void UTankNavMovementComponent1::IntendTurnRight(float ALI)
+{
+	RightTrack->SetThrottle(ALI);
 }
